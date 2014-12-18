@@ -20,16 +20,16 @@
 ##############################################################################
 
 {
-    'name': 'HR Sanctions',
+    'name': 'Stock Picking Street Info',
     'version': '0.1',
-    'category': 'Human Resources',
+    'category': 'Stock',
     'description': "",
     'author': 'Moldeo Interactive',
     'website': 'http://business.moldeo.coop/',
     'images': [],
-    'depends': ['hr'],
+    'depends': ['stock','delivery'],
     'demo': [],
-    'data': ['hr_view.xml'],
+    'data': ['stock_view.xml'],
     # 'data': [],
     'test': [],
     'installable': True,
