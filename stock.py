@@ -33,7 +33,7 @@ class stock_picking(osv.osv):
 
 stock_picking()
 
-
+"""
 class stock_picking_out(osv.osv):
     _name = 'stock.picking.out'
     _inherit = 'stock.picking.out'
@@ -45,4 +45,4 @@ class stock_picking_out(osv.osv):
     }
 
 stock_picking_out()
-
+"""
