@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <record model ="ir.ui.view" id="view_invoice_picking_form">
+        <field name="name">account.invoice.picking.form</field>
+        <field name="model">account.invoice</field>
+	<field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+		<data>
+			<field name="move_id" position="after">
+		        	<field name="nro_remito"/>
+			</field>
+		</data>
+	</field>
+    </record>
+
+   </data>
+</openerp>

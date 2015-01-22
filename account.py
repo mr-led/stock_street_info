@@ -19,6 +19,28 @@
 #
 ##############################################################################
 
-import stock
-import account
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+from openerp.osv import fields, osv
+
+class account_invoice(osv.osv):
+	_name = 'account.invoice'
+	_inherit = 'account.invoice'
+
+
+	def retrieve_picking_number(self, cr, uid, ids, field_name, arg, context=None):
+		records = self.browse(cr, uid, ids)
+		picking_obj = self.pool.get('stock.picking')
+		res = {}
+		for r in records:
+			nro_remito = ''
+			picking_ids = picking_obj.search(cr,uid,[('origin','=',r.origin)])
+			for picking in picking_obj.browse(cr,uid,picking_ids):
+				if picking.nro_impreso:
+					nro_remito = nro_remito + picking.nro_impreso	
+			res[r.id] = nro_remito
+		return res
+
+	_columns = {
+		'nro_remito': fields.function(retrieve_picking_number, type = 'char', string = 'Nro. Remito'),
+		}
+
+account_invoice()
