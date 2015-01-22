@@ -29,20 +29,9 @@ class stock_picking(osv.osv):
 	'street': fields.related('partner_id','street',type='char',relation='res.partner',size=128,string='Street',store=False,readonly=True),
 	'city': fields.related('partner_id','city',type='char',relation='res.partner',size=128,string='City',store=False,readonly=True),
 	'zip': fields.related('partner_id','zip',type='char',relation='res.partner',size=128,string='Zip',store=False,readonly=True),
+	'nro_impreso': fields.char('Nro Impreso',size=24),
     }
 
 stock_picking()
 
-"""
-class stock_picking_out(osv.osv):
-    _name = 'stock.picking.out'
-    _inherit = 'stock.picking.out'
 
-    _columns = {
-	'street': fields.related('partner_id','street',type='char',relation='res.partner',size=128,string='Street',store=False,readonly=True),
-	'city': fields.related('partner_id','city',type='char',relation='res.partner',size=128,string='City',store=False,readonly=True),
-	'zip': fields.related('partner_id','zip',type='char',relation='res.partner',size=128,string='Zip',store=False,readonly=True),
-    }
-
-stock_picking_out()
-"""

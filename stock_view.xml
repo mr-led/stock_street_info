@@ -12,6 +12,7 @@
 		        	<field name="street"/>
 		        	<field name="zip"/>
 		        	<field name="city"/>
+		        	<field name="nro_impreso" />
 			</field>
 		</data>
 	</field>
